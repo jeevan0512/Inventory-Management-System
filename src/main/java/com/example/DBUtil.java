@@ -5,13 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-    private static final String URL = "jdbc:mysql://localhost:3306/InventoryDB";
+    // Use the PUBLIC URL for external access (e.g., from your local machine or server)
+    private static final String URL = "jdbc:mysql://hopper.proxy.rlwy.net:32474/railway";
     private static final String USER = "root"; 
-    private static final String PASS = "myadmin123"; 
+    private static final String PASS = "DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR"; 
 
     static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver"); // Ensure you have the MySQL Connector/J in your project
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
