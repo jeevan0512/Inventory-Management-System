@@ -1,4 +1,4 @@
 FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /app
-COPY target/InventoryManagement.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY target/InventoryManagement.war app.war
+ENTRYPOINT ["java", "-war", "app.war"]
