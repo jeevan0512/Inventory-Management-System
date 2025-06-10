@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
     // Use the PUBLIC URL for external access (e.g., from your local machine or server)
-    private static final String URL = "jdbc:mysql://hopper.proxy.rlwy.net:32474/railway?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://hopper.proxy.rlwy.net:3306/railway?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String USER = "root"; 
     private static final String PASS = "DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR"; 
 
