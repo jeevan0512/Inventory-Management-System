@@ -1,18 +1,18 @@
-package com.example;
+
+ package com.example; 
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-    // Use the PUBLIC URL for external access (e.g., from your local machine or server)
-    private static final String URL = "jdbc:mysql://hopper.proxy.rlwy.net:3306/railway?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://localhost:3306/InventoryDB";
     private static final String USER = "root"; 
-    private static final String PASS = "DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR"; 
+    private static final String PASS = "myadmin123"; 
 
     static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Ensure you have the MySQL Connector/J in your project
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
