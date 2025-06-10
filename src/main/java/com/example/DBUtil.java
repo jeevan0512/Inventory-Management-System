@@ -33,7 +33,7 @@ import java.sql.SQLException;
 public class DBUtil {
     private static final String URL = "jdbc:mysql://hopper.proxy.rlwy.net:32474/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASS = "DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR";
+    private static final String PASS = "DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR"; // use your actual password
 
     static {
         try {
