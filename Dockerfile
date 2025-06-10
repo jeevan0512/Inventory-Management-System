@@ -1,4 +1,9 @@
-FROM eclipse-temurin:21-jdk-jammy
-WORKDIR /app
-COPY target/InventoryManagement.war app.war
-ENTRYPOINT ["java", "-war", "app.war"]
+FROM tomcat:9.0-jdk17
+
+# Clean default webapps
+RUN rm -rf /usr/local/tomcat/webapps/*
+
+# Copy WAR file as ROOT.war (so app is available at '/')
+COPY target/InventoryManagement.war /usr/local/tomcat/webapps/ROOT.war
+
+EXPOSE 8080
