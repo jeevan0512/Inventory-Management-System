@@ -1,2 +1,4 @@
-FROM tomcat:9.0-jdk17
-COPY target/InventoryManagement.war /usr/local/tomcat/webapps/InventoryManagement.war
+FROM eclipse-temurin:21-jdk-jammy
+WORKDIR /app
+COPY target/InventoryManagement.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
