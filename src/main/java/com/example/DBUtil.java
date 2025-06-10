@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DBUtil {
     private static final String URL = "jdbc:mysql://localhost:3306/InventoryDB";
     private static final String USER = "root"; 
-    private static final String PASS = "myadmin123"; 
+    private static final String PASS = "12345"; 
 
     static {
         try {
