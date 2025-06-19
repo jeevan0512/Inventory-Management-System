@@ -5,13 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-    private static final String HOST = System.getenv("DB_HOST");       
-    private static final String PORT = System.getenv("DB_PORT");       
-    private static final String DB_NAME = System.getenv("DB_NAME");    
-    private static final String USER = System.getenv("DB_USER");       
-    private static final String PASS = System.getenv("DB_PASS");       
-
-    private static final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DB_NAME + "?useSSL=false&serverTimezone=UTC";
+    private static final String RAW_URL = System.getenv("DATABASE_URL");
+    // Convert the URL to JDBC format and add SSL options
+    private static final String JDBC_URL = convertToJdbcUrl(RAW_URL);
 
     static {
         try {
@@ -22,6 +18,20 @@ public class DBUtil {
     }
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASS);
+        return DriverManager.getConnection(JDBC_URL);
+    }
+
+    // Helper method to convert the DATABASE_URL to JDBC format
+    private static String convertToJdbcUrl(String url) {
+        // Example: mysql://user:pass@host:port/db
+        if (url == null) return null;
+        String jdbcUrl = url.replace("mysql://", "jdbc:mysql://");
+        // Add SSL options
+        if (!jdbcUrl.contains("?")) {
+            jdbcUrl += "?useSSL=true&requireSSL=true&verifyServerCertificate=false";
+        } else {
+            jdbcUrl += "&useSSL=true&requireSSL=true&verifyServerCertificate=false";
+        }
+        return jdbcUrl;
     }
 }
