@@ -7,7 +7,13 @@ import java.sql.SQLException;
 public class DBUtil {
     private static final String RAW_URL = System.getenv("DATABASE_URL");
     // Convert the URL to JDBC format and add SSL options
-    private static final String JDBC_URL = convertToJdbcUrl(RAW_URL);
+    private static final String String jdbcUrl = "jdbc:mysql://hopper.proxy.rlwy.net:32474/railway" +
+                 "?useSSL=true" +
+                 "&requireSSL=true" +
+                 "&verifyServerCertificate=false" +
+                 "&user=root" +
+                 "&password=DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR";
+
 
     static {
         try {
