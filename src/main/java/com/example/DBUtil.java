@@ -6,9 +6,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-    private static final String URL = "jdbc:mysql://localhost:3306/InventoryDB";
+    private static final String URL = "mysql://root:DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR@hopper.proxy.rlwy.net:32474/railway";
     private static final String USER = "root"; 
-    private static final String PASS = "12345"; 
+    private static final String PASS = "DqbhgwJBrvvGgHnLgAHcIXVKCLXghbnR"; 
 
     static {
         try {
